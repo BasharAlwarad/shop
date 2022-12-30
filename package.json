@@ -6,9 +6,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build --prefix frontend",
+    "deploy": "gh-pages -d build --prefix frontend",
     "start": "node backend/server",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
